@@ -1,6 +1,11 @@
 const phoneInput = document.querySelector("#phone");
-const productLinks = document.querySelectorAll(".product-tabs a");
 const leadForm = document.querySelector(".lead-form");
+const heroTrack = document.querySelector(".hero-track");
+const slides = Array.from(document.querySelectorAll(".hero-slide"));
+const slideButtons = Array.from(document.querySelectorAll("[data-slide]"));
+
+let currentSlide = 0;
+let autoTimer;
 
 const formatPhone = (value) => {
   const rest = value.replace(/\D/g, "").replace(/^010/, "").slice(0, 8);
@@ -10,6 +15,24 @@ const formatPhone = (value) => {
   if (!middle) return "010-";
   if (!last) return `010-${middle}`;
   return `010-${middle}-${last}`;
+};
+
+const setSlide = (index) => {
+  if (!heroTrack || slides.length === 0) return;
+
+  currentSlide = (index + slides.length) % slides.length;
+  heroTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+  slideButtons.forEach((button) => {
+    button.classList.toggle("is-active", Number(button.dataset.slide) === currentSlide);
+  });
+};
+
+const startAutoSlide = () => {
+  window.clearInterval(autoTimer);
+  autoTimer = window.setInterval(() => {
+    setSlide(currentSlide + 1);
+  }, 5200);
 };
 
 if (phoneInput) {
@@ -24,14 +47,15 @@ if (phoneInput) {
   });
 }
 
-productLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const target = document.querySelector(link.getAttribute("href"));
+slideButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setSlide(Number(button.dataset.slide));
+    startAutoSlide();
 
-    if (!target) return;
-
-    event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector(".hero-stage")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
 });
 
@@ -41,3 +65,6 @@ if (leadForm) {
     alert("상담 신청 기능은 다음 단계에서 연결하겠습니다.");
   });
 }
+
+setSlide(0);
+startAutoSlide();
