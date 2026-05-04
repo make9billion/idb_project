@@ -144,12 +144,10 @@ button {
 
 .hero-slide {
   position: relative;
-  display: grid;
   flex: 0 0 100%;
-  grid-template-columns: minmax(0, 1fr) 450px;
   min-width: 100%;
   height: 620px;
-  padding: 72px 500px 72px clamp(38px, 8vw, 118px);
+  padding: 72px 470px 72px clamp(38px, 8vw, 118px);
   background:
     linear-gradient(90deg, rgba(237, 247, 247, 0.96) 0%, rgba(237, 247, 247, 0.7) 50%, rgba(237, 247, 247, 0.94) 100%),
     radial-gradient(circle at 48% 68%, rgba(244, 122, 34, 0.16), transparent 16rem);
@@ -183,8 +181,7 @@ button {
 .slide-copy {
   position: relative;
   z-index: 2;
-  align-self: start;
-  max-width: 560px;
+  max-width: min(720px, calc(100vw - 560px));
 }
 
 .slide-kicker,
@@ -208,7 +205,7 @@ button {
 }
 
 .hero-slide p {
-  max-width: 500px;
+  max-width: 660px;
   margin: 0;
   color: var(--blue);
   font-size: clamp(1.7rem, 2.7vw, 2.5rem);
@@ -635,8 +632,12 @@ button {
 
 @media (max-width: 1180px) {
   .hero-slide {
-    padding-right: 462px;
+    padding-right: 430px;
     padding-left: 42px;
+  }
+
+  .slide-copy {
+    max-width: min(640px, calc(100vw - 500px));
   }
 
   .slide-visual {
@@ -670,9 +671,13 @@ button {
   }
 
   .hero-slide {
-    grid-template-columns: 1fr;
     height: 520px;
     padding: 48px 28px;
+  }
+
+  .slide-copy,
+  .hero-slide p {
+    max-width: 100%;
   }
 
   .hero-slide h1,
