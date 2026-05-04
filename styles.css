@@ -458,10 +458,32 @@ button {
 }
 
 .toggle-group {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 7px;
-  padding-top: 16px;
+  min-height: 34px;
+  padding: 3px;
+  margin-top: 14px;
+  border: 1px solid #e4e4e4;
+  border-radius: 999px;
+  background: #f2f2f2;
+}
+
+.toggle-group::before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  content: "";
+  border-radius: 999px;
+  background: var(--orange);
+  box-shadow: 0 5px 14px rgba(244, 122, 34, 0.26);
+  transition: transform 180ms ease;
+}
+
+.toggle-group:has(#female:checked)::before {
+  transform: translateX(100%);
 }
 
 .toggle-group input {
@@ -471,26 +493,19 @@ button {
 }
 
 .toggle-group label {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: #333333;
-  font-size: 0.82rem;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 28px;
+  color: #777777;
+  font-size: 0.78rem;
   font-weight: 900;
+  transition: color 180ms ease;
 }
 
-.toggle-group label::before {
-  width: 20px;
-  height: 20px;
-  content: "";
-  border: 1px solid #d8d8d8;
-  border-radius: 999px;
-  background: #f7f7f7;
-}
-
-.toggle-group input:checked + label::before {
-  border: 6px solid var(--orange);
-  background: var(--white);
+.toggle-group input:checked + label {
+  color: var(--white);
 }
 
 .agree-check {
@@ -747,7 +762,7 @@ button {
   }
 
   .toggle-group {
-    padding-top: 0;
+    margin-top: 0;
   }
 
   .category-rail {
