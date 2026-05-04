@@ -1,7 +1,7 @@
 :root {
   --navy: #16243a;
   --blue: #6676b8;
-  --orange: #f47a22;
+  --orange: #081a33;
   --cream: #f7f3ea;
   --aqua: #edf7f7;
   --white: #ffffff;
@@ -150,7 +150,7 @@ button {
   padding: 72px 470px 72px clamp(38px, 8vw, 118px);
   background:
     linear-gradient(90deg, rgba(237, 247, 247, 0.96) 0%, rgba(237, 247, 247, 0.7) 50%, rgba(237, 247, 247, 0.94) 100%),
-    radial-gradient(circle at 48% 68%, rgba(244, 122, 34, 0.16), transparent 16rem);
+    radial-gradient(circle at 48% 68%, rgba(8, 26, 51, 0.14), transparent 16rem);
 }
 
 .hero-slide--life {
@@ -162,13 +162,13 @@ button {
 .hero-slide--child {
   background:
     linear-gradient(90deg, rgba(255, 248, 236, 0.96), rgba(255, 248, 236, 0.72), rgba(255, 248, 236, 0.94)),
-    radial-gradient(circle at 47% 67%, rgba(244, 122, 34, 0.16), transparent 16rem);
+    radial-gradient(circle at 47% 67%, rgba(8, 26, 51, 0.14), transparent 16rem);
 }
 
 .hero-slide--pet {
   background:
     linear-gradient(90deg, rgba(248, 245, 255, 0.96), rgba(248, 245, 255, 0.72), rgba(248, 245, 255, 0.94)),
-    radial-gradient(circle at 47% 67%, rgba(244, 122, 34, 0.14), transparent 16rem);
+    radial-gradient(circle at 47% 67%, rgba(8, 26, 51, 0.12), transparent 16rem);
 }
 
 .hero-slide--variable,
@@ -258,7 +258,7 @@ button {
   bottom: 196px;
   width: 112px;
   height: 112px;
-  background: rgba(244, 122, 34, 0.18);
+  background: rgba(8, 26, 51, 0.16);
 }
 
 .character-card {
@@ -478,7 +478,7 @@ button {
   content: "";
   border-radius: 999px;
   background: var(--orange);
-  box-shadow: 0 5px 14px rgba(244, 122, 34, 0.26);
+  box-shadow: 0 5px 14px rgba(8, 26, 51, 0.24);
   transition: transform 180ms ease;
 }
 
@@ -534,7 +534,7 @@ button {
 }
 
 .submit-button:hover {
-  background: #e76914;
+  background: #0f2b52;
 }
 
 .privacy-note {
