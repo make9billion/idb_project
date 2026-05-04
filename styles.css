@@ -22,7 +22,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  font-family: "Gowun Dodum", sans-serif;
+  font-family: "Pretendard", sans-serif;
   background: #f7f7f7;
 }
 
@@ -99,7 +99,7 @@ button {
   border-radius: 16px;
   background: var(--white);
   color: var(--orange);
-  font-family: "Nanum Myeongjo", serif;
+  font-family: "Pretendard", sans-serif;
   font-size: 1.7rem;
   font-weight: 800;
 }
@@ -197,7 +197,7 @@ button {
 .hero-slide h2 {
   margin: 34px 0 12px;
   color: #111111;
-  font-family: "Gowun Dodum", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-size: clamp(2.2rem, 3.2vw, 3.1rem);
   font-weight: 900;
   line-height: 1.16;
