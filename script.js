@@ -51,11 +51,6 @@ slideButtons.forEach((button) => {
   button.addEventListener("click", () => {
     setSlide(Number(button.dataset.slide));
     startAutoSlide();
-
-    document.querySelector(".hero-stage")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
   });
 });
 
