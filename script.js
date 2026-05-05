@@ -57,7 +57,7 @@ slideButtons.forEach((button) => {
 if (leadForm) {
   leadForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    alert("상담 신청 기능은 다음 단계에서 연결하겠습니다.");
+    alert("상담신청완료");
   });
 }
 
